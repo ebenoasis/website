@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    form {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      
+    }
+    input {
+      padding: 50px;
+    }
+    button {
+      background-color: blue;
+      border: 1px solid blue;
+      cursor: pointer;
+    }
+    .list {
+      display: flex; 
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form >
+    <input class="input" type="text">
+    <button class="btn">New element</button>
+    <ul class="list">
+
+    </ul>
+  </form>
+
+  <script>
+    document.querySelector(".btn").addEventListener('click', (e) => {
+      e.preventDefault();
+      const inputValue = document.querySelector('.input').value;
+      const value = document.createTextNode(inputValue)
+      const div = document.createElement('div')
+      const list = document.querySelector('.list')
+      div.appendChild(value)
+      list.appendChild(div)
+      document.body.appendChild(list)
+      document.querySelector('.input').value = '';
+    })
+  </script>
+</body>
+</html>

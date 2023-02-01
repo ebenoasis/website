@@ -2,6 +2,12 @@
     display: flex;
 }
 
+
+.contact-form {
+    display: block;
+    text-align: center;
+  }
+
 .radio {
     display: flex;
     flex-direction: column;
